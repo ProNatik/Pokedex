@@ -7,8 +7,8 @@ function PokemonList({ pokemons }) {
   const [searchValue, setSearchValue] = useState('');
   return (
     <>
-      <form>
-        <input placeholder='Recherche' onChange={(e)=>setSearchValue(e.target.value)}></input>
+      <form  className={`${styles.form}`}>
+        <input placeholder='Search' onChange={(e)=>setSearchValue(e.target.value)}  className={`${styles.search} form-control`}></input>
       </form>
       <div className={`${styles.container}`}>
           <div className='row'>

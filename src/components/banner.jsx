@@ -8,12 +8,12 @@ function banner() {
     return (
         <header className={styles.header}>
             <h1>
-                <Link to="/">Pokemon</Link>
+                <Link to="/" className={styles.text}>Pokemon</Link>
             </h1>
-            <input placeholder='Recherche'></input>
-            <div>
-                <Link to="/pokedex"> <strong>Pokedex {pokedex.length}</strong> </Link>
-            </div>
+            <div></div>
+            <h3>
+                <Link to="/pokedex" className={styles.text}> Pokedex ({pokedex.length})</Link>
+            </h3>
         </header>
     );
 };

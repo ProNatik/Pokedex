@@ -44,7 +44,7 @@ function PokemonCard({ pokemon }) {
   const URL = `https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-iv/platinum/${id}.png`;
   return (
     <div  className={`col-10 mx-auto col-sm-6 col-lg-3 ${styles.Card_pokemon}`} pokemon={pokemon}>
-      <div>
+      <div className={`${styles.img}`}>
         <img src={URL} alt={pokemon.name} />
       </div>
       <div>
@@ -52,8 +52,8 @@ function PokemonCard({ pokemon }) {
           {pokemon.name}
         </h3>
       </div>
-      <button onClick={()=>onTagle()} className={isInLocalStorage?"btn btn-danger":"btn btn-success"}>{isInLocalStorage?"Retirer":"Ajouter"}</button>
-      <Link to={`/pokemonDetails/${id}`} className='btn btn-info'>Details</Link>
+        <button onClick={()=>onTagle()} className={isInLocalStorage?`btn btn-danger ${styles.btn}`:`btn btn-success ${styles.btn}`}>{isInLocalStorage?"Remove":"Add"}</button>
+        <Link to={`/pokemonDetails/${id}`} className={`btn btn-info ${styles.btn}`}>Details</Link>
     </div>
   );
 }

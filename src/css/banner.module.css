@@ -1,4 +1,12 @@
 .header{
     display: flex;
-    justify-content: space-around;
+    justify-content: space-between;
+    padding: 6px;
+    margin-bottom: 6px;
+    box-shadow: -1px 1px 3px #0c0a04;
+    background-color: #523E09;
+}
+.text{
+    color: burlywood;
+    font-family: cursive;
 }

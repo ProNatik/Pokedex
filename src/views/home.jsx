@@ -6,8 +6,7 @@ const home = () => {
     const pokemons = useListPokemons();
 
     return (
-        <>
-            
+        <>  
             <div>{pokemons && <PokemonList pokemons={pokemons} />}</div>
         </>
     )

@@ -1,9 +1,22 @@
 .Card_pokemon{
     border: #0c0a04 1px solid;
     border-radius: 5px;
-    margin: 5px;
+    margin: 20px;
+    transition: 0.25s linear;
+    background-color: navajowhite;
+    max-width: 280px !important;
+    padding: 5px;
+    box-shadow: 1px 1px 4px #0c0a04;
 }
-.button{
-  border: #0c0a04 1px solid;
-  border-radius: 5px;
+.Card_pokemon:hover{
+  transform: translate3d(0, -5px, 0);
+}
+.img{
+  margin: auto;
+  border-radius: 50%;
+  max-width: 100px;
+  background-color: azure;
+}
+.btn{
+  margin: 2px;
 }
