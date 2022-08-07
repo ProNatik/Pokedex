@@ -24,26 +24,28 @@ function pokemonDetails({ pokemon }){
             <div className={`${styles.card}`}>
                 <div className={`${styles.card_img}`}>
                     <img src={url} alt="Pokemon" />
+                    <h2>{pokemons.name}</h2>
                 </div>
-                <div className={`${styles.card_dis}`}>
-                    <h1>{pokemons.name}</h1>
-                    <p>{description}</p>
+                <div className={`${styles.info}`}>
+                    <p className={`${styles.t_description}`}>Description :</p>
+                    <p className={`${styles.description}`}>{description}</p>
                     <div className={`${styles.prezInfo}`}>
-                        <ul className={`${styles.info}`}>
-                            <li>Type: {pokemons.types && pokemons.types.map(type => <p key={uuidv4()}>{type.type.name}</p>)}</li>
-                            <li>Weight: { (Math.round(pokemons.weight * 10) / 100).toFixed(2) }kg</li>
-                            <li>Height: { (Math.round(pokemons.height * 10) / 100).toFixed(2) }m</li>
-                            <li>Base Experience:112</li>
-                            <li>Abilities: {pokemons.abilities && pokemons.abilities.map(ab => (<p key={uuidv4()}>{ab.ability.name}{','}</p>))}</li>
+                        <ul className={`${styles.ul_caracteristique}`}>
+                            <li className={`${styles.li_caracteristique}`}>Type: {pokemons.types && pokemons.types.map(type => (<p key={uuidv4()}>{type.type.name}{','}</p>))}</li>
+                            <li className={`${styles.li_caracteristique}`}>Weight: { (Math.round(pokemons.weight * 10) / 100).toFixed(2) }kg</li>
+                            <li className={`${styles.li_caracteristique}`}>Height: { (Math.round(pokemons.height * 10) / 100).toFixed(2) }m</li>
+                            <li className={`${styles.li_caracteristique}`}>Base Experience:112</li>
+                            <li className={`${styles.li_caracteristique}`}>Abilities: {pokemons.abilities && pokemons.abilities.map(ab => (<p key={uuidv4()}>{ab.ability.name}{','}</p>))}</li>
                         </ul>
-                        <ul className={`${styles.info} list-group`}>
-                            {pokemons.stats && pokemons.stats.map(stat => <li className="list-group-item" key={uuidv4()}>{stat.stat.name}: {stat.base_stat}</li>)}
+                        <ul className={`${styles.ul_caracteristique} ${styles.stats} list-group`}>
+                            {pokemons.stats && pokemons.stats.map(stat => <li className={`list-group-item ${styles.stats}`} key={uuidv4()}>{stat.stat.name}: {stat.base_stat}</li>)}
                         </ul>
                     </div>
                 </div>
                 <div>
-                    <ul>
-                            {PokeEvolution && PokeEvolution.map(Evolution => <li key={uuidv4()}><img src={`https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/${Evolution.id}.gif`} /><p>{Evolution.name}</p></li>)}
+                    <h2 className={`${styles.t_evolution}`}>Evolutions :</h2>
+                    <ul className={`${styles.evolutions}`}>
+                            {PokeEvolution && PokeEvolution.map(Evolution => (<><li key={uuidv4()}><img src={`https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/${Evolution.id}.gif`} /><p>{Evolution.name}</p></li></>))}
                     </ul>
                 </div>
             </div>

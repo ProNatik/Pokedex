@@ -6,6 +6,7 @@
 }
 .App{
   background-color: darkcyan;
+  min-height: 721px;
 }
 
 .logo {
